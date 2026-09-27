@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad - HCF App</title>
+  <meta name="last-modified" content="2026-09-27">
+  <style>
+body{max-width:720px;margin:0 auto;padding:20px;font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#222;background:#fff;font-size:16px}
+h1{font-size:1.6em;margin-top:1.6em;color:#111}
+h2{font-size:1.25em;margin-top:1.6em;color:#111}
+p{margin:0 0 1em}
+ul{padding-left:24px;margin:0 0 1em}
+code{background:#f4f4f4;padding:2px 6px;border-radius:4px;font-family:ui-monospace,monospace}
+hr{border:none;border-top:1px solid #ddd;margin:1.6em 0}
+a{color:#0066cc;text-decoration:underline}
+@media(max-width:480px){body{padding:14px;font-size:16px}}
+  </style>
+</head>
+<body>
+  <main>
+<h1>Política de Privacidad – HCF App</h1>
+<p>Responsable del software: HCF App</p>
+<p>Contacto: hcfappcontacto@gmail.com · +58 412 364 63 31</p>
+<p>País de la app: Venezuela</p>
+<p>Última actualización: 2026-09-27</p>
+<hr>
+<h2>1. Responsable del software y del tratamiento</h2>
+<p>Responsable del software y de los datos de licencia: HCF App, con correo de contacto hcfappcontacto@gmail.com y número de teléfono +58 412 364 63 31, con base de operaciones en la República Bolivariana de Venezuela. HCF App actúa como responsable únicamente de los datos técnicos necesarios para el funcionamiento del software y la validación de licencias (deviceId y código de activación).</p>
+<p>Responsable del tratamiento de los datos clínicos de los pacientes: El profesional de la salud (fisioterapeuta o médico tratante) que utiliza HCF. HCF NO es responsable del tratamiento de los datos clínicos. HCF es únicamente el proveedor de la herramienta de software. El fisioterapeuta es el único responsable del tratamiento de los datos de sus pacientes, conforme a las leyes aplicables en su jurisdicción.</p>
+<h2>2. Naturaleza de la aplicación (100% offline)</h2>
+<p>HCF es una aplicación 100% offline. No cuenta con servidores propios ni con una base de datos centralizada. Esto significa que los datos clínicos nunca salen de tu dispositivo, salvo cuando el usuario decide de forma voluntaria:</p>
+<ul>
+<li>exportar o compartir una copia de seguridad o un informe (por ejemplo, un informe de progreso), o</li>
+<li>enviar el cuestionario de admisión a un paciente mediante WhatsApp.</li>
+</ul>
+<p>En esos casos, los datos se comparten únicamente por la iniciativa y a través de los canales elegidos por el profesional de la salud.</p>
+<p>HCF es un software de gestión de historia clínica, NO es un dispositivo médico ni un producto sanitario. HCF no diagnostica, no trata, no prescribe y no sustituye el criterio clínico del profesional de la salud.</p>
+<h2>3. Datos que se procesan</h2>
+<p>La aplicación procesa exclusivamente datos de clave clínica y operativa, todos administrados por el profesional de la salud:</p>
+<ul>
+<li>Datos de pacientes: nombre y apellido, documento de identidad (cédula), fecha de nacimiento, diagnóstico, fotografías (fotos de paciente), evaluaciones clínicas, historia clínica, sesiones de terapia y archivos adjuntos (informes, radiografías).</li>
+<li>Datos del terapeuta / profesional: nombre, especialidad y firma digital.</li>
+<li>Datos de cobro: información de pago (nombre, banco, cuenta, pago móvil, email, billetera USDT) que el terapeuta configura para mostrar en sus facturas. Estos datos se guardan exclusivamente en el dispositivo del profesional.</li>
+<li>Respaldo (backup) cifrado: copias de seguridad cifradas de toda la información anterior, que el profesional puede exportar, guardar en el servicio de almacenamiento de su elección y restaurar.</li>
+<li>Preferencias de la app: ajustes locales (idioma, colores, recordatorios) que no constituyen datos personales sensibles.</li>
+</ul>
+<h2>4. Transmisión de datos</h2>
+<p>La única transmisión de datos que realiza HCF es la siguiente:</p>
+<ul>
+<li>deviceId (identificador anónimo del dispositivo) y código de licencia se envían a un servicio de Google Apps Script únicamente para validar la licencia de la aplicación.</li>
+<li>Los datos clínicos NUNCA se transmiten, ni se envían a ningún servidor externo.</li>
+</ul>
+<p>Adicionalmente, el propio usuario puede, de forma voluntaria y bajo su exclusiva responsabilidad:</p>
+<ul>
+<li>Enviar el cuestionario de admisión por WhatsApp: HCF abre el enlace para que el usuario envíe un mensaje con el cuestionario a través de WhatsApp, un servicio de terceros. Las respuestas que el paciente devuelve por ese canal quedan fuera del control de HCF.</li>
+<li>Compartir informes de progreso y facturas: el usuario comparte dichos documentos (PDF) mediante las aplicaciones que él mismo elige (WhatsApp, email, etc.), por lo que el destinatario y el contenido son elección y responsabilidad del profesional.</li>
+</ul>
+<p>HCF no recopila ni comparte datos con anunciantes, analíticas de terceros ni redes sociales. HCF no tiene acceso ni control sobre los datos una vez que son enviados por el usuario a través de servicios de terceros como WhatsApp.</p>
+<h2>5. Almacenamiento y cifrado</h2>
+<ul>
+<li>AsyncStorage cifrado: los datos clínicos se almacenan cifrados con AES-256-CTR + HMAC-SHA256 (integrado por su integridad). La clave de cifrado se genera aleatoriamente y se almacena protegida en SecureStore (cifrado por hardware del sistema operativo).</li>
+<li>Backups exportados: se cifran con AES-256-CBC + HMAC-SHA256 usando una clave derivada de la contraseña que el profesional introduce al exportar/importar (PBKDF2-SHA256, 150.000 iteraciones). La contraseña del backup manual no se almacena en ningún sitio. El backup automático usa una clave que el profesional configura una vez y se guarda cifrada en SecureStore (cifrado por hardware del sistema operativo).</li>
+<li>SecureStore cifrado por hardware: los datos sensibles (claves, credenciales) se almacenan en el almacén seguro del sistema operativo, cifrado por hardware.</li>
+<li>Fotos y archivos: las imágenes clínicas se guardan en el almacenamiento privado de la aplicación en el dispositivo.</li>
+</ul>
+<h2>6. Derechos del paciente</h2>
+<p>Conforme a la normativa de protección de datos, el paciente (o su representante legal) tiene derecho a:</p>
+<ul>
+<li>Acceso: obtener una copia de sus datos clínicos.</li>
+<li>Rectificación: solicitar la corrección de datos inexactos.</li>
+<li>Eliminación: solicitar la eliminación de sus datos.</li>
+<li>Portabilidad: obtener sus datos en un formato estructurado de uso común.</li>
+<li>Oposición: oponerse al tratamiento de sus datos en los supuestos previstos por la ley.</li>
+</ul>
+<p>El profesional de la salud es responsable de atender estas solicitudes. HCF facilita las herramientas de exportación y eliminación para cumplirlas. Para el ejercicio de derechos sobre la aplicación en sí, el usuario puede escribir a hcfappcontacto@gmail.com.</p>
+<h2>7. Retención de datos</h2>
+<ul>
+<li>Los datos clínicos permanecen en el dispositivo hasta que el profesional los elimine (función de eliminación de la aplicación) o hasta que desinstale la aplicación.</li>
+<li>Los backups automáticos se conservan durante 7 días; los más antiguos se eliminan automáticamente para evitar acumulación (conservando siempre el más reciente).</li>
+<li>Los backups manuales exportados por el profesional se conservan hasta que el mismo los borre.</li>
+</ul>
+<h2>8. Menores de edad</h2>
+<p>En caso de atender a menores de edad, el profesional debe obtener el consentimiento del representante legal (padre, madre o tutor) antes de registrar cualquier dato del menor en la aplicación. HCF no recopila datos de menores sin dicho consentimiento.</p>
+<h2>9. Seguridad y violación de datos</h2>
+<ul>
+<li>Medidas técnicas: cifrado en reposo (AES-256-CTR + HMAC), almacén seguro (SecureStore), autenticación por contraseña y, opcionalmente, biometría (Face ID / Touch ID / huella).</li>
+<li>FLAG_SECURE activo: la aplicación impide capturas de pantalla y la aparición de la app en el conmutador de tareas recientes cuando está abierta con información sensible, reduciendo el riesgo de exposición visual.</li>
+<li>Riesgo principal: dado que los datos residen únicamente en el dispositivo, el riesgo de violación de datos más relevante es el robo o pérdida del dispositivo. Por ello se recomienda: activar el bloqueo de pantalla del dispositivo, mantener la contraseña de HCF en secreto y realizar copias de seguridad periódicas y cifradas.</li>
+<li>Notificación a la autoridad de control: dentro de 72 horas desde que HCF tenga conocimiento de la brecha, cuando aplique (GDPR art. 33).</li>
+<li>Notificación a los usuarios afectados: sin dilación indebida cuando la brecha suponga un alto riesgo para sus derechos (GDPR art. 34).</li>
+<li>Canal de notificación: por correo electrónico registrado (si lo hay) o mediante aviso destacado en la aplicación.</li>
+<li>Contenido mínimo de la notificación: naturaleza de la brecha, datos afectados, medidas adoptadas, recomendaciones al usuario, datos de contacto del responsable.</li>
+</ul>
+<h2>10. Leyes aplicables</h2>
+<p>Esta política se ha redactado teniendo en cuenta la normativa aplicable según el país de uso del profesional:</p>
+<ul>
+<li>Venezuela (país de origen): Ley Orgánica de Protección de Datos Personales (LOPDP).</li>
+<li>Colombia: Ley 1581 de 2012 y Decreto 1377 de 2013.</li>
+<li>México: Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).</li>
+<li>Argentina: Ley 25.326 de Protección de los Datos Personales.</li>
+<li>Brasil: Lei Geral de Proteção de Dados (LGPD – Ley 13.709/2018).</li>
+<li>Unión Europea: Reglamento General de Protección de Datos (RGPD / GDPR).</li>
+<li>Estados Unidos (si aplica): HIPAA (Health Insurance Portability and Accountability Act).</li>
+<li>Canadá: PIPEDA (Personal Information Protection and Electronic Documents Act).</li>
+</ul>
+<p>En caso de conflicto entre las normas, se aplicará la ley del lugar de establecimiento del profesional y la normativa más protectora de los derechos del paciente. Esta política no constituye asesoría legal; se recomienda consultar a un profesional del derecho sobre el cumplimiento específico en cada jurisdicción.</p>
+<h2>11. Cambios en esta política</h2>
+<p>HCF puede actualizar esta Política de Privacidad para reflejar mejoras en las medidas de seguridad o cambios normativos. Se recomienda revisarla periódicamente. La fecha de la última actualización figura al inicio de este documento.</p>
+<h2>12. Contacto</h2>
+<p>Para cualquier pregunta, ejercicio de derechos o reclamación sobre esta Política de Privacidad, contacta a hcfappcontacto@gmail.com o al +58 412 364 63 31.</p>
+  </main>
+</body>
+</html>
